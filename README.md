@@ -59,7 +59,65 @@ django_timer/
 3. **Cara Menjalankan Aplikasi**
 
    - Clone Repositori:
-     git clone https://github.com/username/repo.git
+     git clone https://github.com/bittbugss/django-timer-app.git
+   - Migrasi Basis Data:
+     python manage.py migrate
+   - Jalankan Server:
+     python manage.py runserver
+   - Akses di Browser:
+     http://localhost:8000
+
+
+4.** Penjelasan Antarmuka
+Screenshot Antarmuka**
+
+Display Timer: Menampilkan hitungan mundur dalam format MM:SS
+
+Tombol Kontrol:
+
+▶ Start: Memulai timer
+
+⏸ Pause: Menjeda timer
+
+⏹ Reset: Mengulang ke waktu awal
+
+Preset Waktu: Tombol cepat untuk memilih durasi (10-60 menit)
+
+Break Timer: Tombol untuk memilih durasi istirahat (5-15 menit)
+
+5. Teknologi yang Digunakan
+Frontend: HTML5, CSS3 (dengan animasi CSS), JavaScript
+
+Backend: Django 4.2
+
+Desain: Flat UI dengan gradien dinamis
+
+6. FAQ (Pertanyaan Umum)
+Q: Bagaimana cara mengganti warna tema?
+A: Ubah nilai variabel CSS di style.css:
+
+:root {
+  --primary-color: #2a2a72; /* Warna utama */
+  --secondary-color: #009ffd; /* Warna sekunder */
+}
+
+Q: Mengapa timer tidak berjalan?
+A: Pastikan:
+
+Server Django sedang berjalan
+
+Tidak ada error di konsol browser
+
+Tombol Start telah diklik
+
+Q: Bagaimana cara menambahkan preset waktu baru?
+A: Tambahkan tombol di index.html:
+
+<button class="preset-btn" onclick="setTime(15)">15m</button>
+
+
+
+
 
 
 
