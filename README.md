@@ -42,18 +42,8 @@ Notifikasi interaktif
 
 2. **Struktur Berkas**
 
-django_timer/
-├── timer_project/       # Konfigurasi utama proyek
-│   ├── settings.py      # Pengaturan aplikasi
-│   └── urls.py         # Rute URL
-│
-├── timer_app/           # Aplikasi timer
-│   ├── static/          # CSS, JS, dan gambar
-│   ├── templates/       # File HTML
-│   └── views.py        # Logika tampilan
-│
-├── manage.py            # Skrip pengelola Django
-└── requirements.txt     # Daftar dependensi
+![image](https://github.com/user-attachments/assets/c719399a-f8a6-48e6-95fc-cf1db68fe5cd)
+
 
 
 3. **Cara Menjalankan Aplikasi**
