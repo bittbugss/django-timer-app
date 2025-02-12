@@ -1,0 +1,43 @@
+<!-- timer_app/templates/timer_app/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pro Wave Timer</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'timer_app/css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="notification" class="hidden"></div>
+    
+    <div class="wave-background"></div>
+    
+    <div class="container">
+        <div id="timer-display">00:00</div>
+        
+        <div class="control-section">
+            <div class="control-buttons">
+                <button id="startBtn" onclick="startTimer()">▶ Start</button>
+                <button onclick="pauseTimer()">⏸ Pause</button>
+                <button onclick="resetTimer()">⏹ Reset</button>
+            </div>
+            
+            <div class="break-buttons">
+                <button class="break-btn" onclick="setBreakTime(5)">5m Break</button>
+                <button class="break-btn" onclick="setBreakTime(10)">10m Break</button>
+                <button class="break-btn" onclick="setBreakTime(15)">15m Break</button>
+            </div>
+        </div>
+
+        <div class="preset-buttons">
+            <button class="preset-btn" onclick="setTime(10)">10m</button>
+            <button class="preset-btn" onclick="setTime(20)">20m</button>
+            <button class="preset-btn" onclick="setTime(30)">30m</button>
+            <button class="preset-btn" onclick="setTime(45)">45m</button>
+            <button class="preset-btn" onclick="setTime(60)">60m</button>
+        </div>
+    </div>
+
+    <script src="{% static 'timer_app/js/script.js' %}"></script>
+</body>
+</html>

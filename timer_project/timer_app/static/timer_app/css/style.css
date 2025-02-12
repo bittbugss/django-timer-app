@@ -1,0 +1,120 @@
+:root {
+    --primary-color: #2a2a72;
+    --secondary-color: #009ffd;
+    --accent-color: #ff0076;
+}
+
+body {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.wave-background {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 50vh;
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+    border-radius: 100% 50%;
+    animation: wave 10s infinite linear;
+}
+
+@keyframes wave {
+    0% { transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(-25%) rotate(2deg); }
+    100% { transform: translateX(0) rotate(0deg); }
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding-top: 10vh;
+}
+
+#timer-display {
+    font-size: 12em;
+    margin: 20px 0;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+    letter-spacing: 5px;
+}
+
+.control-section {
+    background: rgba(0,0,0,0.2);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.control-buttons, .break-buttons, .preset-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+button {
+    background: rgba(255,255,255,0.15);
+    border: 2px solid rgba(255,255,255,0.3);
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    color: white;
+}
+
+button:hover {
+    background: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.preset-btn {
+    min-width: 90px;
+}
+
+.break-btn {
+    background: var(--accent-color);
+    border-color: #ff0076;
+}
+
+#notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.2em;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
+
+#notification.hidden {
+    opacity: 0 !important;
+}
+
+#notification:not(.hidden) {
+    opacity: 1;
+    animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
